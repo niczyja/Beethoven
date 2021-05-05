@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "Beethoven"
   s.summary          = "A maestro of pitch detection"
-  s.version          = "4.1.2"
+  s.version          = "4.1.3"
   s.homepage         = "https://github.com/vadymmarkov/Beethoven"
   s.license          = 'MIT'
   s.author           = { "Vadym Markov" => "markov.vadym@gmail.com" }
