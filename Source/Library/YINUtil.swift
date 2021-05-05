@@ -211,7 +211,7 @@ final class YINUtil {
       betterTau = Float(tau)
     }
 
-    return fabs(betterTau)
+    return abs(betterTau)
   }
 
   class func sumSquare(yinBuffer: [Float], start: Int, end: Int) -> Float {

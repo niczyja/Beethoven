@@ -79,7 +79,7 @@ public final class PitchEngine {
     case AVAudioSessionRecordPermission.denied:
       DispatchQueue.main.async {
         if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-          UIApplication.shared.openURL(settingsURL)
+          UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
         }
       }
     case AVAudioSessionRecordPermission.undetermined:
@@ -96,6 +96,8 @@ public final class PitchEngine {
           weakSelf.activate()
         }
       }
+    @unknown default:
+      return
     }
   }
 
