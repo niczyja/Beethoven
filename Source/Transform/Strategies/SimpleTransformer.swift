@@ -1,11 +1,11 @@
 import AVFoundation
 
-final class SimpleTransformer: Transformer {
+public final class SimpleTransformer: Transformer {
   enum SimpleTransformerError: Error {
     case floatChannelDataIsNil
   }
 
-  func transform(buffer: AVAudioPCMBuffer) throws -> Buffer {
+  public func transform(buffer: AVAudioPCMBuffer) throws -> Buffer {
     guard let pointer = buffer.floatChannelData else {
       throw SimpleTransformerError.floatChannelDataIsNil
     }

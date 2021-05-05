@@ -1,5 +1,5 @@
-final class EstimationFactory {
-  func create(_ strategy: EstimationStrategy) -> Estimator {
+public final class EstimationFactory {
+  public func create(_ strategy: EstimationStrategy) -> Estimator {
     let estimator: Estimator
 
     switch strategy {

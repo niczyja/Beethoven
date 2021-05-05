@@ -8,11 +8,11 @@
 
 import UIKit
 
-final class YINEstimator: Estimator {
-  let transformer: Transformer = YINTransformer()
+public final class YINEstimator: Estimator {
+  public let transformer: Transformer = YINTransformer()
   let threshold: Float = 0.05
 
-  func estimateFrequency(sampleRate: Float, buffer: Buffer) throws -> Float {
+  public func estimateFrequency(sampleRate: Float, buffer: Buffer) throws -> Float {
     var elements = buffer.elements
 
     YINUtil.cumulativeDifference(yinBuffer: &elements)

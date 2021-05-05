@@ -1,8 +1,8 @@
-final class HPSEstimator: LocationEstimator {
+public final class HPSEstimator: LocationEstimator {
   private let harmonics = 5
   private let minIndex = 20
 
-  func estimateLocation(buffer: Buffer) throws -> Int {
+  public func estimateLocation(buffer: Buffer) throws -> Int {
     var spectrum = buffer.elements
     let maxIndex = spectrum.count - 1
     var maxHIndex = spectrum.count / harmonics

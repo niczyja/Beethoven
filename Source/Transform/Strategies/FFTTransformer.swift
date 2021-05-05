@@ -1,8 +1,8 @@
 import AVFoundation
 import Accelerate
 
-final class FFTTransformer: Transformer {
-  func transform(buffer: AVAudioPCMBuffer) throws -> Buffer {
+public final class FFTTransformer: Transformer {
+  public func transform(buffer: AVAudioPCMBuffer) throws -> Buffer {
     let frameCount = buffer.frameLength
     let log2n = UInt(round(log2(Double(frameCount))))
     let bufferSizePOT = Int(1 << log2n)

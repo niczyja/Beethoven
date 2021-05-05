@@ -11,9 +11,9 @@
 import UIKit
 import Accelerate
 
-final class YINUtil {
+public final class YINUtil {
   // Slow and eats a lot of CPU, but working
-  class func difference2(buffer: [Float]) -> [Float] {
+  public class func difference2(buffer: [Float]) -> [Float] {
     let bufferHalfCount = buffer.count / 2
     var resultBuffer = [Float](repeating:0.0, count:bufferHalfCount)
 
@@ -29,7 +29,7 @@ final class YINUtil {
 
   // Accelerated version of difference2 -
   // Instruments shows roughly around 22% CPU usage, compared to 95% for difference2
-  class func differenceA(buffer: [Float]) -> [Float] {
+  public class func differenceA(buffer: [Float]) -> [Float] {
     let bufferHalfCount = buffer.count / 2
     var resultBuffer = [Float](repeating:0.0, count:bufferHalfCount)
     var tempBuffer = [Float](repeating:0.0, count:bufferHalfCount)
@@ -57,7 +57,7 @@ final class YINUtil {
   //
   // Kept for reference only.
   // swiftlint:disable function_body_length
-  class func difference_broken_do_not_use(buffer: [Float]) -> [Float] {
+  public class func difference_broken_do_not_use(buffer: [Float]) -> [Float] {
     let frameSize = buffer.count
     let yinBufferSize = frameSize / 2
 
@@ -145,7 +145,7 @@ final class YINUtil {
     return resultYinBuffer
   }
 
-  class func cumulativeDifference(yinBuffer: inout [Float]) {
+  public class func cumulativeDifference(yinBuffer: inout [Float]) {
     yinBuffer[0] = 1.0
 
     var runningSum: Float = 0.0
@@ -161,7 +161,7 @@ final class YINUtil {
     }
   }
 
-  class func absoluteThreshold(yinBuffer: [Float], withThreshold threshold: Float) -> Int {
+  public class func absoluteThreshold(yinBuffer: [Float], withThreshold threshold: Float) -> Int {
     var tau = 2
     var minTau = 0
     var minVal: Float = 1000.0
@@ -188,7 +188,7 @@ final class YINUtil {
     return 0
   }
 
-  class func parabolicInterpolation(yinBuffer: [Float], tau: Int) -> Float {
+  public class func parabolicInterpolation(yinBuffer: [Float], tau: Int) -> Float {
     guard tau != yinBuffer.count else {
       return Float(tau)
     }
@@ -214,7 +214,7 @@ final class YINUtil {
     return abs(betterTau)
   }
 
-  class func sumSquare(yinBuffer: [Float], start: Int, end: Int) -> Float {
+  public class func sumSquare(yinBuffer: [Float], start: Int, end: Int) -> Float {
     var out: Float = 0.0
 
     for i in start ..< end {
